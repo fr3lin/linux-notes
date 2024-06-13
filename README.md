@@ -1,2 +1,6 @@
-# linux-notes
-My lecture notes on Linux.
+---
+description: My Linux Notes
+---
+
+# Linux Notes
+
