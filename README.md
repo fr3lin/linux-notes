@@ -16,17 +16,17 @@ coverY: 0
 
 #### chgrp <a href="#z38k4yc1vq2n" id="z38k4yc1vq2n"></a>
 
-chgrp \<Gruppe> \<File||Dir>
+`chgrp <Gruppe> <File||Dir>`
 
-chgrp verkauf /zugriff/vk
+`chgrp verkauf /zugriff/vk`
 
 #### chown <a href="#lfnwxw9wnw9k" id="lfnwxw9wnw9k"></a>
 
-chown \<user> \<File||Dir>
+`chown <user> <File||Dir>`
 
-chown \<user>**:**\<group> \<File||Dir>
+`chown <user>`**`:`**`<group> <File||Dir>`
 
-chown **:**\<group> \<File||Dir>
+`chown`` `**`:`**`<group> <File||Dir>`
 
 ### Aufgabe 1 <a href="#l7hp3vmku6zv" id="l7hp3vmku6zv"></a>
 
@@ -104,13 +104,13 @@ It is always best practice to create groups first.
 
 #### Lösung 3: <a href="#va4kb2yr70ch" id="va4kb2yr70ch"></a>
 
-mkdir -p /a-daten/pott1/
+`mkdir -p /a-daten/pott1/`
 
-mkdir /a-daten/pott2/
+`mkdir /a-daten/pott2/`
 
-mkdir /a-daten/pott3/
+`mkdir /a-daten/pott3/`
 
-ls -l /a-daten/ to prove
+`ls -l /a-daten/ to prove`
 
 #### 4. Besitzrechte ändern : <a href="#id-9le29q8bskqc" id="id-9le29q8bskqc"></a>
 
@@ -122,55 +122,55 @@ team3 auf pott3
 
 #### Lösung 4: <a href="#t7t6hkaxale6" id="t7t6hkaxale6"></a>
 
-chgrp team1 /a-daten/pott1
+`chgrp team1 /a-daten/pott1`
 
-chgrp team2 /a-daten/pott2
+`chgrp team2 /a-daten/pott2`
 
-chgrp team2 /a-daten/pott3
+`chgrp team2 /a-daten/pott3`
 
 OR
 
-cd /a-daten/
+`cd /a-daten/`
 
-chown root:team1 pott1
+`chown root:team1 pott1`
 
-chown root:team2 pott2
+`chown root:team2 pott2`
 
-chown root:team3 pott3
+`chown root:team3 pott3`
 
 #### 5. Für alle pott-directories die Rechte ändern: <a href="#s6h3v3y2drd8" id="s6h3v3y2drd8"></a>
 
-rwx rwx --T
+`rwx rwx --T`
 
 #### Lösung 5: <a href="#id-4pp4cyedmgsp" id="id-4pp4cyedmgsp"></a>
 
-chmod 1770 /a-daten/\*
+`chmod 1770 /a-daten/*`
 
 ### usermod <a href="#p1oiczdsvq1l" id="p1oiczdsvq1l"></a>
 
-usermod carlo -G team1
+`usermod carlo -G team1`
 
 to add carlo into team1 group.
 
-usermod -a -G group1,group2 username
+`usermod -a -G group1,group2 username`
 
 to add a user into different groups.
 
-**usermod -aG sudo ozgur** add the user **ozgur** to sudo group (= make him Admin)
+**`usermod -aG sudo ozgur`** add the user **ozgur** to sudo group (= make him Admin)
 
-usermod -l user\_newname user\_oldname to rename a user
+`usermod -l user_newname user_oldname` to rename a user
 
-ls -l
+`ls -l`
 
-**typ rights link owner group bytes date Name**
+**`typ rights link owner group bytes date Name`**
 
-\- rwxr-xr-x 2 root root 484 18.04 test.txt
+`- rwxr-xr-x 2 root root 484 18.04 test.txt`
 
-d rwxr-xr-x 2 root root 4096 25.04 pool
+`d rwxr-xr-x 2 root root 4096 25.04 pool`
 
 ### Adding a New Disk <a href="#u2o9pmco5qoy" id="u2o9pmco5qoy"></a>
 
-/dev/sda We have already and we would like to add a new one.
+`/dev/sda` We have already and we would like to add a new one.
 
 ![](.gitbook/assets/0.png)
 
@@ -182,25 +182,20 @@ Let’s say we are adding a new disk to our system. We need to follow these step
 
 In VirtualBox, Linux Mint, we added a 5 GB secondary disk.
 
-#### lsblk <a href="#r01bq4eknf9p" id="r01bq4eknf9p"></a>
+#### `lsblk` <a href="#r01bq4eknf9p" id="r01bq4eknf9p"></a>
 
 List block devices
 
-ozgur@frelin:\~$ **lsblk**
+`ozgur@frelin:~$`` `**`lsblk`**
 
-NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+`NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS`
 
-sda 8:0 0 15,5G 0 disk
-
-├─sda1 8:1 0 1M 0 part
-
-├─sda2 8:2 0 513M 0 part /boot/efi
-
-└─sda3 8:3 0 15G 0 part /
-
-sdb 8:16 0 5G 0 disk
-
-sr0 11:0 1 1024M 0 rom
+`sda 8:0 0 15,5G 0 disk`\
+`├─sda1 8:1 0 1M 0 part`\
+`├─sda2 8:2 0 513M 0 part /boot/efi`\
+`└─sda3 8:3 0 15G 0 part /`\
+`sdb 8:16 0 5G 0 disk`\
+`sr0 11:0 1 1024M 0 rom`
 
 #### blkid <a href="#g00vu9qqjxyv" id="g00vu9qqjxyv"></a>
 
@@ -208,7 +203,7 @@ Zeigt formatierte Partitionen.
 
 shows only the formatted partitions.
 
-sdb is not visible because it is not formatted yet.
+`sdb` is not visible because it is not formatted yet.
 
 ozgur@frelin:\~$ **blkid**
 
@@ -218,9 +213,9 @@ ozgur@frelin:\~$ **blkid**
 
 #### fdisk / gdisk <a href="#yevomv9ehjb5" id="yevomv9ehjb5"></a>
 
-**fdisk** (old) => MBR (512 bytes, sadece 4 tane partition destekliyor. Artik kullanilmiyor)
+**fdisk** (old) => MBR (512 bytes, supports 4 partitions only. Not used any more.)
 
-**gdisk** => GUID (Globally Unique Identifier, GPT (GUID Partition Table). Günümüzde sadece bu kullaniliyor. 128 partition destekliyor.
+**gdisk** => GUID (Globally Unique Identifier, GPT (GUID Partition Table). Only this is used today. Supports 128 partitions.
 
 root@frelin:\~# **ls -l /dev/sd\***
 
