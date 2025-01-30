@@ -575,12 +575,12 @@ mkfs default: ext2
 
 We have 2 options to use mkfs command:
 
-1. mkfs.ext4 /dev/sdb1
-2. mkfs -t ext3 /dev/sdb1
+1. <code>mkfs.ext4 /dev/sdb1</code>
+2. <code>mkfs -t ext3 /dev/sdb1</code>
 
 Since we have the disk formatted, now we can see it with the command blkid.
 
-root@frelin:\~# **blkid**
+<code>root@frelin:\~# <b>blkid</b></code>
 
 /dev/sda2: UUID="87FB-00E8" BLOCK\_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="f737667d-1be9-4d2e-8be7-5f6c3aafd91a"
 
