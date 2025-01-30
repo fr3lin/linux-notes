@@ -582,6 +582,7 @@ Since we have the disk formatted, now we can see it with the command blkid.
 
 <code>root@frelin:\~# <b>blkid</b></code>
 
+```console
 /dev/sda2: UUID="87FB-00E8" BLOCK\_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="f737667d-1be9-4d2e-8be7-5f6c3aafd91a"
 
 /dev/sda3: UUID="c282c0f1-ce03-406c-9f17-3e878c3402e9" BLOCK\_SIZE="4096" TYPE="ext4" PARTUUID="0213cc74-73d7-4098-a0e7-b6746304c282"
@@ -593,7 +594,8 @@ Since we have the disk formatted, now we can see it with the command blkid.
 /dev/sdb3: UUID="9fc9a7e9-27c7-4bc3-8f87-68c8329b7b7a" BLOCK\_SIZE="4096" TYPE="ext4" PARTLABEL="Linux filesystem" PARTUUID="ec571ace-e9c0-44e5-8dca-8c2fb3eda5a8"
 
 /dev/sda1: PARTUUID="48784f8f-7b4e-4976-8113-a777b40e4e4b"
-
+```
+```console
 root@frelin:\~#
 
 root@frelin:\~# mkdir /platte-b/part1 -p
@@ -611,7 +613,7 @@ drwxr-xr-x 2 root root 4096 Apr 25 12:06 part1
 drwxr-xr-x 2 root root 4096 Apr 25 12:06 part2
 
 drwxr-xr-x 2 root root 4096 Apr 25 12:06 part3
-
+```
 ### montieren <a href="#id-3ynto7plf0ph" id="id-3ynto7plf0ph"></a>
 
 **mount**
@@ -621,7 +623,7 @@ mount \<device> \<mount-point>(directory)
 mount /dev/sdb1 /platte-b/part1
 
 Temporary. The mount disappears when the computer boots.
-
+```console
 root@frelin:\~# **mount /dev/sdb1 /platte-b/part1**
 
 root@frelin:\~# **lsblk**
@@ -645,11 +647,11 @@ sdb 8:16 0 5G 0 disk
 └─sdb3 8:19 0 2G 0 part
 
 sr0 11:0 1 1024M 0 rom
-
+```
 To make it permanent we need to write it into the config file.
 
-nano /etc/fstab
-
+<code>nano /etc/fstab</code>
+```console
 \<file system> \<mount point> \<type> \<options> \<dump> \<pass>
 
 /dev/sdb1 /platte-b/part1 ext4 defaults 0 0
@@ -659,7 +661,7 @@ nano /etc/fstab
 /dev/sdb3 /platte-b/part3 ext4 defaults 0 0
 
 ext4 defaults (rw,auto,async,nouser,suid,exec,dev) 0 0
-
+```
 defaults,noauto,noexec,user (If there are things we don't want to add, we can remove them this way.)
 
 We now save the file.
