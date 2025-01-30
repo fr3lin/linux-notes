@@ -186,7 +186,7 @@ In VirtualBox, Linux Mint, we added a 5 GB secondary disk.
 
 List block devices
 
-`ozgur@frelin:~$`` `**`lsblk`**
+<code>ozgur@frelin:~$ <b>lsblk</b></code>
 
 `NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS`
 
@@ -217,9 +217,10 @@ shows only the formatted partitions.
 **fdisk** (old) => MBR (512 bytes, supports 4 partitions only. Not used any more.)
 
 **gdisk** => GUID (Globally Unique Identifier, GPT (GUID Partition Table). Only this is used today. Supports 128 partitions.
+```
 
-root@frelin:\~# **ls -l /dev/sd\***
-
+<code>root@frelin:\~# <b>ls -l /dev/sd\*</b></code>
+```console
 brw-rw---- 1 root disk 8, 0 Apr 25 11:01 /dev/sda
 
 brw-rw---- 1 root disk 8, 1 Apr 25 11:01 /dev/sda1
@@ -229,9 +230,10 @@ brw-rw---- 1 root disk 8, 2 Apr 25 11:01 /dev/sda2
 brw-rw---- 1 root disk 8, 3 Apr 25 11:01 /dev/sda3
 
 brw-rw---- 1 root disk 8, 16 Apr 25 11:01 /dev/sdb
+```
 
-root@frelin:\~# **gdisk /dev/sdb**
-
+<code>root@frelin:\~# <b>gdisk /dev/sdb</b></code>
+```console
 GPT fdisk (gdisk) version 1.0.8
 
 Partition table scan:
