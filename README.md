@@ -96,11 +96,11 @@ It is always best practice to create groups first.
 
 #### 3. Wir brauchen drei Verzeichnisse: <a href="#qq5nphxgtsjo" id="qq5nphxgtsjo"></a>
 
-/a-daten/pott1
+`/a-daten/pott1`
 
-/a-daten/pott2
+`/a-daten/pott2`
 
-/a-daten/pott3
+`/a-daten/pott3`
 
 #### Lösung 3: <a href="#va4kb2yr70ch" id="va4kb2yr70ch"></a>
 
@@ -205,6 +205,7 @@ shows only the formatted partitions.
 
 `sdb` is not visible because it is not formatted yet.
 
+```console
 ozgur@frelin:\~$ **blkid**
 
 /dev/sda2: UUID="87FB-00E8" BLOCK\_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="f737667d-1be9-4d2e-8be7-5f6c3aafd91a"
@@ -562,6 +563,7 @@ fd00 Linux RAID
 Press the \<Enter> key to see more codes, q to quit: **w**
 
 Likewise, we create 2 more partitions 2 GB each.
+```
 
 #### formatieren <a href="#o01d80s2ilhk" id="o01d80s2ilhk"></a>
 
