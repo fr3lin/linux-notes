@@ -205,9 +205,9 @@ shows only the formatted partitions.
 
 `sdb` is not visible because it is not formatted yet.
 
-```console
-ozgur@frelin:\~$ <b>blkid</b>
 
+<code>ozgur@frelin:\~$ <b>blkid</b></code>
+```console
 /dev/sda2: UUID="87FB-00E8" BLOCK\_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="f737667d-1be9-4d2e-8be7-5f6c3aafd91a"
 
 /dev/sda3: UUID="c282c0f1-ce03-406c-9f17-3e878c3402e9" BLOCK\_SIZE="4096" TYPE="ext4" PARTUUID="0213cc74-73d7-4098-a0e7-b6746304c282"
